@@ -20,7 +20,7 @@
     
     
       
-        <title>Deploy with a Bucket - Platform201</title>
+        <title>Deploy with a Bucket - platform201</title>
       
     
     
@@ -99,7 +99,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Platform201" class="md-header__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href=".." title="platform201" class="md-header__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
 
@@ -112,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Platform201
+            platform201
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -222,12 +222,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Platform201" class="md-nav__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href=".." title="platform201" class="md-nav__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
 
     </a>
-    Platform201
+    platform201
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix="">
@@ -1451,7 +1451,7 @@
 
 
 <h1 id="deploying-an-application-with-a-bucket">Deploying an Application with a Bucket</h1>
-<p>In this example, we have an application that uploads, lists, and downloads text files stored in a Cloud Storage bucket. Platform201 creates the bucket for you and hands its name to your backend - there are no Google Cloud credentials to connect and no key files to manage.</p>
+<p>In this example, we have an application that uploads, lists, and downloads text files stored in a Cloud Storage bucket. platform201 creates the bucket for you and hands its name to your backend - there are no Google Cloud credentials to connect and no key files to manage.</p>
 <p>You need four components: two <strong>container nodes</strong>, a <strong>gateway node</strong>, and a <strong>bucket node</strong>.</p>
 <ul>
 <li><strong>Bucket node</strong> - creates the storage bucket and provides its name as an output you map into your container.</li>
@@ -1461,7 +1461,7 @@
 <p>Hit deploy, and it just works.</p>
 <div class="admonition tip">
 <p class="admonition-title">Skip the setup - use the blueprint</p>
-<p>This whole graph is published as a ready-made blueprint: <a href="https://app.platform201stack.com/blueprints/ab0c9e36-118a-4ede-9c55-5cc18cc5c74e">Text Vault - Bucket Demo</a>. Open it, set your gateway domain, and press <strong>Deploy</strong> - every node, path, and output mapping described below is already wired up.</p>
+<p>This whole graph is published as a ready-made blueprint: <a href="https://app.platform201.com/blueprints/ab0c9e36-118a-4ede-9c55-5cc18cc5c74e">Text Vault - Bucket Demo</a>. Open it, set your gateway domain, and press <strong>Deploy</strong> - every node, path, and output mapping described below is already wired up.</p>
 <p>Prefer to build it yourself, or want to understand what the blueprint does? Follow the steps on this page.</p>
 </div>
 <div class="admonition info">
@@ -1580,7 +1580,7 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">No credentials needed</p>
-<p>The demo's README mentions <code>GOOGLE_APPLICATION_CREDENTIALS</code> for running locally. On Platform201 you can leave it unset - the backend authenticates to the bucket automatically when deployed.</p>
+<p>The demo's README mentions <code>GOOGLE_APPLICATION_CREDENTIALS</code> for running locally. On platform201 you can leave it unset - the backend authenticates to the bucket automatically when deployed.</p>
 </div>
 <h3 id="the-gateway">The gateway</h3>
 <p>Click the gateway node, expand the <strong>Domain</strong> section, and enter the URL name you want. For example, entering <code>text-vault</code> will make your app available at <code>text-vault.eu1.platform201.live</code>. You can also point a <a href="../faq-custom-domain/">custom domain</a> at this address.</p>
@@ -1616,7 +1616,7 @@
 <p><strong>IN</strong> is the path your users hit on the gateway; <strong>OUT</strong> is the path the container actually listens on. More specific paths always win over <code>/</code>, so <code>/api</code> takes priority over the frontend's catch-all. See <a href="../path-routing/">path-based routing</a> for more detail.</p>
 <div class="admonition tip">
 <p class="admonition-title">No rewrite config needed</p>
-<p>The frontend calls the backend through relative <code>/api/*</code> paths. Running locally, the demo's README suggests a Next.js rewrite to forward them. On Platform201 the gateway does that forwarding for you, so the frontend needs no <code>next.config.js</code>.</p>
+<p>The frontend calls the backend through relative <code>/api/*</code> paths. Running locally, the demo's README suggests a Next.js rewrite to forward them. On platform201 the gateway does that forwarding for you, so the frontend needs no <code>next.config.js</code>.</p>
 </div>
 <h3 id="connect-the-bucket-to-the-backend">Connect the bucket to the backend</h3>
 <p>Link the bucket node to the <code>Backend</code> container. The connection carries an <strong>Output</strong> panel where you map bucket values onto environment variables. Click <strong>Add mapping</strong> and add:</p>
@@ -1639,7 +1639,7 @@
 <hr>
 <h2 id="step-three-deploy">Step Three - Deploy</h2>
 <p>Press <strong>Deploy</strong>. You can watch the deployment in real time via the <strong>Observability</strong> menu, or by clicking the link on the deploy button.</p>
-<p>Once your graph is working, you can share it with others by pressing <strong>Publish Blueprint</strong> - which is exactly how the <a href="https://app.platform201stack.com/blueprints/ab0c9e36-118a-4ede-9c55-5cc18cc5c74e">blueprint linked at the top of this page</a> was made.</p>
+<p>Once your graph is working, you can share it with others by pressing <strong>Publish Blueprint</strong> - which is exactly how the <a href="https://app.platform201.com/blueprints/ab0c9e36-118a-4ede-9c55-5cc18cc5c74e">blueprint linked at the top of this page</a> was made.</p>
 <h2 id="done">Done</h2>
 <p>Open your gateway address. Choose a file and press <strong>Upload to bucket</strong> - the page shows <strong>Uploaded successfully</strong> and the file appears under <strong>Bucket items</strong>. Click <strong>Download</strong> next to any item to fetch it back from the bucket.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/bucket-03-result.png" data-desc-position="bottom"><img alt="Text vault page showing an uploaded file in the bucket items list" src="../assets/screenshots/bucket-03-result.png"></a></p>

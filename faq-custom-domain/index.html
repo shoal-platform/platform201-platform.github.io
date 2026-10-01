@@ -20,7 +20,7 @@
     
     
       
-        <title>Setting up a Custom Domain - Platform201</title>
+        <title>Setting up a Custom Domain - platform201</title>
       
     
     
@@ -99,7 +99,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Platform201" class="md-header__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href=".." title="platform201" class="md-header__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
 
@@ -112,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Platform201
+            platform201
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -222,12 +222,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Platform201" class="md-nav__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href=".." title="platform201" class="md-nav__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
 
     </a>
-    Platform201
+    platform201
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix="">
@@ -1317,15 +1317,15 @@
 
 
 <h1 id="how-do-i-set-up-a-custom-domain">How do I set up a custom domain?</h1>
-<p>Every gateway gets a default Platform201 address like <code>gigantic-peach-ptarmigan.eu1.platform201.live</code>. You can put a hostname you own in front of it, such as <code>app.mycompany.com</code>, so users reach your deployment on your own domain.</p>
-<p>Platform201 handles SSL for custom domains. You don't need to set up a certificate.</p>
+<p>Every gateway gets a default platform201 address like <code>gigantic-peach-ptarmigan.eu1.platform201.live</code>. You can put a hostname you own in front of it, such as <code>app.mycompany.com</code>, so users reach your deployment on your own domain.</p>
+<p>platform201 handles SSL for custom domains. You don't need to set up a certificate.</p>
 <h2 id="before-you-start">Before you start</h2>
 <ul>
 <li>A deployment with a <strong>gateway node</strong></li>
 <li>Access to the DNS settings for your domain (Cloudflare, Route 53, Namecheap, GoDaddy, etc.)</li>
 </ul>
 <h2 id="1-open-the-gateways-custom-domain-settings">1. Open the gateway's custom domain settings</h2>
-<p>On your graph, find the <strong>gateway node</strong>. Its <strong>Domain</strong> row shows the default Platform201 address. Click the <strong>link icon</strong> in the top-right corner of the node.</p>
+<p>On your graph, find the <strong>gateway node</strong>. Its <strong>Domain</strong> row shows the default platform201 address. Click the <strong>link icon</strong> in the top-right corner of the node.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/custom-domain-01-gateway-link.png" data-desc-position="bottom"><img alt="Gateway node with the custom domain link icon highlighted" src="../assets/screenshots/custom-domain-01-gateway-link.png"></a></p>
 <h2 id="2-enter-your-hostname">2. Enter your hostname</h2>
 <p>In the <strong>Add custom domain</strong> dialog, type the hostname you want to use, for example <code>test.platform201.com</code>.</p>
@@ -1334,7 +1334,7 @@
 <li>Enter only the hostname: no <code>https://</code> and no trailing path.</li>
 </ul>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/custom-domain-02-hostname.png" data-desc-position="bottom"><img alt="Add custom domain dialog with a hostname entered" src="../assets/screenshots/custom-domain-02-hostname.png"></a></p>
-<p>Submit the dialog to register the hostname. Platform201 then shows the DNS records you need to publish.</p>
+<p>Submit the dialog to register the hostname. platform201 then shows the DNS records you need to publish.</p>
 <h2 id="3-add-the-dns-records-at-your-dns-provider">3. Add the DNS records at your DNS provider</h2>
 <p>The domain now appears with a <strong>Pending DNS</strong> status, along with two <code>CNAME</code> records. Use the copy buttons to copy each value exactly.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/custom-domain-03-dns-records.png" data-desc-position="bottom"><img alt="Pending DNS status with the two CNAME records to publish" src="../assets/screenshots/custom-domain-03-dns-records.png"></a></p>
@@ -1359,7 +1359,7 @@
 <td>CNAME</td>
 <td><code>_acme-challenge.test.platform201.com</code></td>
 <td><code>&lt;token&gt;.dcv.platform201.live</code></td>
-<td>Lets Platform201 verify the domain and issue its SSL certificate</td>
+<td>Lets platform201 verify the domain and issue its SSL certificate</td>
 </tr>
 </tbody>
 </table>
@@ -1370,15 +1370,15 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Using Cloudflare?</p>
-<p>Set both records to <strong>DNS only</strong> (grey cloud), not proxied. With the proxy on, Platform201 can't verify the domain or issue the certificate.</p>
+<p>Set both records to <strong>DNS only</strong> (grey cloud), not proxied. With the proxy on, platform201 can't verify the domain or issue the certificate.</p>
 </div>
 <h2 id="4-wait-for-the-domain-to-become-active">4. Wait for the domain to become active</h2>
-<p>DNS changes can take anywhere from a few minutes to a few hours to propagate. Once Platform201 detects both records and issues the certificate, the status changes from <strong>Pending DNS</strong> to <strong>Active</strong>.</p>
+<p>DNS changes can take anywhere from a few minutes to a few hours to propagate. Once platform201 detects both records and issues the certificate, the status changes from <strong>Pending DNS</strong> to <strong>Active</strong>.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/custom-domain-04-active.png" data-desc-position="bottom"><img alt="Custom domain showing the Active status" src="../assets/screenshots/custom-domain-04-active.png"></a></p>
 <p>Your deployment is now reachable at <code>https://&lt;your-hostname&gt;</code>. Click the external link icon next to the hostname to open it.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p><strong>The domain stays on Pending DNS.</strong>
-Check that both records exist and match the values shown in Platform201 exactly. You can look up what DNS currently returns with:</p>
+Check that both records exist and match the values shown in platform201 exactly. You can look up what DNS currently returns with:</p>
 <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>-type<span class="o">=</span>CNAME<span class="w"> </span>test.platform201.com
 nslookup<span class="w"> </span>-type<span class="o">=</span>CNAME<span class="w"> </span>_acme-challenge.test.platform201.com
 </code></pre></div>

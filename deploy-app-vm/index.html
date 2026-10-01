@@ -20,7 +20,7 @@
     
     
       
-        <title>Deploy a Virtual Machine - Platform201</title>
+        <title>Deploy a Virtual Machine - platform201</title>
       
     
     
@@ -99,7 +99,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Platform201" class="md-header__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href=".." title="platform201" class="md-header__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
 
@@ -112,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Platform201
+            platform201
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -222,12 +222,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Platform201" class="md-nav__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href=".." title="platform201" class="md-nav__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
 
     </a>
-    Platform201
+    platform201
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix="">
@@ -1485,7 +1485,7 @@
 <li><strong>Machine type</strong> - <code>e2-micro</code>, <code>e2-small</code>, <code>e2-medium</code>, <code>e2-standard-2</code>, <code>e2-standard-4</code>, <code>e2-standard-8</code> (vCPU/memory scale up the list).</li>
 <li><strong>OS image</strong> - Debian 11/12, Ubuntu 22.04/24.04 LTS, or Container-Optimized OS (<code>cos-cloud</code>, stable/beta, amd64/arm64).</li>
 <li><strong>Region</strong> - the GCP region the VM runs in.</li>
-<li><strong>Status</strong> - <code>RUNNING</code>, <code>SUSPENDED</code>, or <code>TERMINATED</code>. This is the desired state Platform201 reconciles the VM to.</li>
+<li><strong>Status</strong> - <code>RUNNING</code>, <code>SUSPENDED</code>, or <code>TERMINATED</code>. This is the desired state platform201 reconciles the VM to.</li>
 </ul>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/vm-3.png" data-desc-position="bottom"><img alt="Machine config" src="../assets/screenshots/vm-3.png"></a></p>
 <div class="admonition warning">
@@ -1493,7 +1493,7 @@
 <p>Switching OS image after the VM has been created wipes the machine on next redeploy - it's a fresh boot disk, not an in-place upgrade.</p>
 </div>
 <h4 id="container-optimized-os-docker-compose">Container-Optimized OS + Docker Compose</h4>
-<p>If you pick a <code>cos-cloud</code> image, a <strong>Docker Compose</strong> field appears. Paste (or upload) a <code>docker-compose.yml</code> and Platform201 runs it on boot - no manual <code>docker compose up</code> needed.</p>
+<p>If you pick a <code>cos-cloud</code> image, a <strong>Docker Compose</strong> field appears. Paste (or upload) a <code>docker-compose.yml</code> and platform201 runs it on boot - no manual <code>docker compose up</code> needed.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/vm-4.png" data-desc-position="bottom"><img alt="Docker Compose source" src="../assets/screenshots/vm-4.png"></a></p>
 <h3 id="step-three-boot-disk">Step Three: Boot disk</h3>
 <ul>
@@ -1513,9 +1513,9 @@
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/vm-8.png" data-desc-position="bottom"><img alt="SSH keys" src="../assets/screenshots/vm-8.png"></a></p>
 <h4 id="how-keys-are-generated-and-stored">How keys are generated and stored</h4>
 <ul>
-<li>New key pairs are generated <strong>in your browser</strong> (Ed25519, via the Web Crypto API). The private key is never sent to Platform201's servers - only the public key is saved, as an authorized key on the VM.</li>
+<li>New key pairs are generated <strong>in your browser</strong> (Ed25519, via the Web Crypto API). The private key is never sent to platform201's servers - only the public key is saved, as an authorized key on the VM.</li>
 <li>When a new pair is generated, you get one chance to keep the private key: copy it, download it as a <code>.pem</code> file, or check <strong>"Save to browser, encrypted with a passphrase."</strong> If you close the dialog without doing one of these, the private key is gone for good - it cannot be regenerated or recovered, and the VM will still trust the (now-orphaned) public key.</li>
-<li>Checking "Save to browser" the first time prompts you to set a <strong>vault passphrase</strong>. This passphrase encrypts the private key (AES-GCM, PBKDF2-derived) before it's written to your browser's local storage. Platform201 never sees the passphrase or the decrypted key.</li>
+<li>Checking "Save to browser" the first time prompts you to set a <strong>vault passphrase</strong>. This passphrase encrypts the private key (AES-GCM, PBKDF2-derived) before it's written to your browser's local storage. platform201 never sees the passphrase or the decrypted key.</li>
 <li>The passphrase is <strong>per-browser</strong>, not per-VM or per-key - one passphrase unlocks every saved key across every space, project, and environment in that browser. It only exists on the device you set it on; there's no server-side backup or cross-device sync, and no "forgot passphrase" recovery. Losing it means losing every key saved under it.</li>
 </ul>
 <h4 id="deleting-saved-keys">Deleting saved keys</h4>

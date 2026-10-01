@@ -18,7 +18,7 @@
     
     
       
-        <title>Platform201</title>
+        <title>platform201</title>
       
     
     
@@ -97,7 +97,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Platform201" class="md-header__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href="." title="platform201" class="md-header__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="assets/platform201-mark-white-transparent.png" alt="logo">
 
@@ -110,7 +110,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Platform201
+            platform201
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -220,12 +220,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Platform201" class="md-nav__button md-logo" aria-label="Platform201" data-md-component="logo">
+    <a href="." title="platform201" class="md-nav__button md-logo" aria-label="platform201" data-md-component="logo">
       
   <img src="assets/platform201-mark-white-transparent.png" alt="logo">
 
     </a>
-    Platform201
+    platform201
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix="">
@@ -389,7 +389,7 @@
   <a href="#where-does-platform201-deploy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Where does Platform201 deploy?
+        Where does platform201 deploy?
       
     </span>
   </a>
@@ -1383,7 +1383,7 @@
   <a href="#where-does-platform201-deploy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Where does Platform201 deploy?
+        Where does platform201 deploy?
       
     </span>
   </a>
@@ -1434,14 +1434,14 @@
 
 
 
-<h1 id="platform201-quick-start-guide">Platform201 Quick Start Guide</h1>
-<p>Welcome to Platform201 - the simplest way to deploy your application to the internet. Point Platform201 at your GitHub repo, connect a gateway, and hit deploy. Platform201 handles containers, scaling, SSL, and routing automatically, so you can focus on building.</p>
+<h1 id="platform201-quick-start-guide">platform201 Quick Start Guide</h1>
+<p>Welcome to platform201 - the simplest way to deploy your application to the internet. Point platform201 at your GitHub repo, connect a gateway, and hit deploy. platform201 handles containers, scaling, SSL, and routing automatically, so you can focus on building.</p>
 <p>This guide walks you through everything you need to get started - from core concepts to deploying apps with databases, schedulers, and multi-service routing.</p>
 <h2 id="things-you-need-to-know">Things you need to know</h2>
 <h3 id="what-is-a-gateway-why-do-i-need-one">What is a gateway? Why do I need one?</h3>
-<p>A gateway sits in front of your app and directs all incoming traffic to the right place. Think of it as a receptionist - visitors don't go straight to your desk, they check in first. On Platform201, your gateway handles this automatically so your app is reachable from the internet without any extra setup.</p>
+<p>A gateway sits in front of your app and directs all incoming traffic to the right place. Think of it as a receptionist - visitors don't go straight to your desk, they check in first. On platform201, your gateway handles this automatically so your app is reachable from the internet without any extra setup.</p>
 <p>It also keeps your app secure and stable. The gateway shields your app from direct exposure to the internet, handles SSL so all traffic is encrypted, and protects against sudden spikes by rate limiting incoming requests - so a surge in traffic won't take your app down.</p>
-<p>The Platform201 gateway is configured to achieve an <strong>A grade</strong> on <a href="https://www.ssllabs.com/ssltest/" target="_blank">SSL Labs</a> out of the box - no SSL configuration needed on your part.</p>
+<p>The platform201 gateway is configured to achieve an <strong>A grade</strong> on <a href="https://www.ssllabs.com/ssltest/" target="_blank">SSL Labs</a> out of the box - no SSL configuration needed on your part.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="assets/screenshots/ssl.png" data-desc-position="bottom"><img alt="SSL Labs A Grade" class="screenshot" src="assets/screenshots/ssl.png"></a></p>
 <div class="admonition info">
 <p class="admonition-title">What is SSL Labs?</p>
@@ -1449,23 +1449,23 @@
 </div>
 <p>It also includes an <strong>IPS (Intrusion Prevention System)</strong>, which watches incoming traffic in real time and automatically blocks known attacks and malicious requests before they ever reach your app - so you get an extra layer of protection with no setup required.</p>
 <h3 id="what-is-a-container">What is a container?</h3>
-<p>A container is a lightweight package that holds your app and everything it needs to run - code, dependencies, settings. It works the same way on any machine, so there are no "works on my computer" surprises. Platform201 runs your app inside containers behind the scenes.</p>
+<p>A container is a lightweight package that holds your app and everything it needs to run - code, dependencies, settings. It works the same way on any machine, so there are no "works on my computer" surprises. platform201 runs your app inside containers behind the scenes.</p>
 <h3 id="what-is-a-dockerfile">What is a Dockerfile?</h3>
-<p>A Dockerfile is a simple text file that describes how to build your container. It lists the steps to set up your app - what base image to start from, what files to copy in, and what command to run. Think of it as a recipe: Platform201 follows it to package your app into a container that's ready to deploy.</p>
-<p><em>You don't always need a Dockerfile - if your project doesn't include one, Platform201 auto-detects your stack and builds it for you.</em></p>
+<p>A Dockerfile is a simple text file that describes how to build your container. It lists the steps to set up your app - what base image to start from, what files to copy in, and what command to run. Think of it as a recipe: platform201 follows it to package your app into a container that's ready to deploy.</p>
+<p><em>You don't always need a Dockerfile - if your project doesn't include one, platform201 auto-detects your stack and builds it for you.</em></p>
 <h3 id="what-is-a-function">What is a function?</h3>
-<p>A function is a small piece of compute that runs on demand and scales to zero when idle, so you're not paying for a server that sits there waiting. It's a good fit for event-driven tasks and lightweight workloads - a webhook handler, an image resize, a one-off API endpoint. Point Platform201 at your source and a gateway, same as a container, and it's live.</p>
+<p>A function is a small piece of compute that runs on demand and scales to zero when idle, so you're not paying for a server that sits there waiting. It's a good fit for event-driven tasks and lightweight workloads - a webhook handler, an image resize, a one-off API endpoint. Point platform201 at your source and a gateway, same as a container, and it's live.</p>
 <p><em>See <a href="deploy-app-function/">Deploying a Function</a> for a full walkthrough.</em></p>
 <h3 id="what-is-a-database-node">What is a database node?</h3>
-<p>A database node provisions and manages a database for you and hands your app the connection details automatically - no connection strings to copy around by hand. Platform201 currently supports two managed options: <strong>Neon</strong> (serverless Postgres that scales to zero) and <strong>MongoDB Atlas</strong> (managed MongoDB). Connect one to a container or function and its outputs map straight into your app's environment variables.</p>
+<p>A database node provisions and manages a database for you and hands your app the connection details automatically - no connection strings to copy around by hand. platform201 currently supports two managed options: <strong>Neon</strong> (serverless Postgres that scales to zero) and <strong>MongoDB Atlas</strong> (managed MongoDB). Connect one to a container or function and its outputs map straight into your app's environment variables.</p>
 <p><em>See <a href="deploy-app-neon/">Deploying with Neon</a> and <a href="deploy-app-mongodb/">Deploying with MongoDB</a>.</em></p>
 <h3 id="what-about-multiple-services-or-routing-by-path">What about multiple services, or routing by path?</h3>
 <p>Bigger apps are often more than one service - an API, a worker, an admin panel - all living behind one domain. Connect several container or function nodes to the same gateway, and the gateway routes each request to the right one based on the URL path. You can also <strong>rewrite</strong> paths in transit, so a public path like <code>/accounts</code> can map to a completely different path on the service behind it.</p>
 <p><em>See <a href="deploy-app-multi/">Deploying with Multiple Containers</a> and <a href="path-routing/">Path-Based Routing</a>.</em></p>
 <h3 id="what-is-a-scheduler">What is a scheduler?</h3>
 <p>A scheduler runs tasks on a timer - like a cron job or a recurring reminder. If you need something to happen every night at midnight or every 5 minutes, a scheduler handles that for you without leaving a server running 24/7.</p>
-<h3 id="where-does-platform201-deploy">Where does Platform201 deploy?</h3>
-<p>Platform201 currently deploys into <strong>Google Cloud Platform (GCP)</strong>. Support for Azure, AWS, and other cloud providers is coming soon - and if you want full control, you'll be able to deploy into your own private infrastructure too.</p>
+<h3 id="where-does-platform201-deploy">Where does platform201 deploy?</h3>
+<p>platform201 currently deploys into <strong>Google Cloud Platform (GCP)</strong>. Support for Azure, AWS, and other cloud providers is coming soon - and if you want full control, you'll be able to deploy into your own private infrastructure too.</p>
 <h3 id="whats-a-project-and-an-environment">What's a project, and an environment?</h3>
 <p>A <strong>project</strong> is a collection of services that belong together - your app, its database, maybe a background worker. An <strong>environment</strong> is a version of that project for a specific purpose: typically <code>development</code> (for testing changes) and <code>production</code> (the live version your users see). Changes in development don't affect production until you're ready.</p>
 <h3 id="what-do-i-get-when-i-create-a-new-environment">What do I get when I create a new environment?</h3>
