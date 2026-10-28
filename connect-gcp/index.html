@@ -1,0 +1,1846 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../first-setup/">
+      
+      
+        <link rel="next" href="../deploy-app/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/platform201-logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Connect Your Google Cloud - platform201</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#connect-your-google-cloud-organisation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="platform201" class="md-header__button md-logo" aria-label="platform201" data-md-component="logo">
+      
+  <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            platform201
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Connect Your Google Cloud
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="platform201" class="md-nav__button md-logo" aria-label="platform201" data-md-component="logo">
+      
+  <img src="../assets/platform201-mark-white-transparent.png" alt="logo">
+
+    </a>
+    platform201
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../supported/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What We Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect Your Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect Your Google Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#why-connect-your-own-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why connect your own organisation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-open-the-projects-google-cloud-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Open the project's Google Cloud settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-select-and-link-your-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Select and link your organisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-an-environment-in-your-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create an environment in your organisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-platform201-creates-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What platform201 creates and changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What platform201 creates and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-you-link-the-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When you link the organisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-linked-environment-is-provisioned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a linked environment is provisioned
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disconnect-in-platform201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disconnect in platform201
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revoke-the-connection-directly-in-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revoke the connection directly in Google Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Revoke the connection directly in Google Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-remove-folder-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Remove folder access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-remove-billing-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Remove billing access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-remove-access-inside-each-environment-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Remove access inside each environment project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-review-setup-permissions-and-policy-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Review setup permissions and policy exceptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy an Application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with a Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-mongodb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with MongoDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-neon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with Neon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-cloudsql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with Cloud SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-scheduler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with a Scheduler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with a Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-message-queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with a Message Queue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-bucket/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with a Bucket
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-multi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy with Multiple Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-app-vm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy a Virtual Machine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../path-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Path-Based Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcpservers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connect Your AI (MCP)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ &amp; Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQ &amp; Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-zip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploading Your Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skipped-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skipped Upload Files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-dockerfile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing a Dockerfile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-platform201-live/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is eu1.platform201.live?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-custom-domain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up a Custom Domain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-env-vars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-port/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Framework Default Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-crontab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crontab Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-deployment-failing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why is my Deployment Failing?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq-private-repo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploying a Private GitHub Repo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#why-connect-your-own-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why connect your own organisation?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before you start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-open-the-projects-google-cloud-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Open the project's Google Cloud settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-select-and-link-your-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Select and link your organisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-an-environment-in-your-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Create an environment in your organisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-platform201-creates-and-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What platform201 creates and changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What platform201 creates and changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-you-link-the-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When you link the organisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-a-linked-environment-is-provisioned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When a linked environment is provisioned
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disconnect-in-platform201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disconnect in platform201
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#revoke-the-connection-directly-in-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revoke the connection directly in Google Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Revoke the connection directly in Google Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-remove-folder-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Remove folder access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-remove-billing-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Remove billing access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-remove-access-inside-each-environment-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Remove access inside each environment project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-review-setup-permissions-and-policy-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Review setup permissions and policy exceptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="connect-your-google-cloud-organisation">Connect Your Google Cloud Organisation</h1>
+<p><strong>This integration is for Google Cloud organisations only.</strong> Connect your organisation to deploy environments into your own GCP account, billed to your own billing account, while continuing to build and deploy through platform201.</p>
+<p>platform201 uses service accounts to manage infrastructure on your behalf. Linking grants access to existing platform201 service accounts; deploying an environment creates deployment and runtime service accounts inside its new GCP project. You can revoke the connection at any time, either in platform201 or directly in Google Cloud.</p>
+<div class="admonition note">
+<p class="admonition-title">An organisation is required</p>
+<p>You need a Google Cloud organisation. This flow creates new GCP projects inside a dedicated folder in that organisation; it does not connect an existing standalone GCP project.</p>
+</div>
+<h2 id="why-connect-your-own-organisation">Why connect your own organisation?</h2>
+<ul>
+<li>Keep your deployed infrastructure inside your own Google Cloud organisation.</li>
+<li>Pay Google Cloud infrastructure charges through the billing account you choose for each environment.</li>
+<li>Use the platform201 canvas and deployment workflow to manage that infrastructure.</li>
+<li>Choose whether each new environment uses your linked organisation or platform201-managed hosting.</li>
+</ul>
+<h2 id="before-you-start">Before you start</h2>
+<ul>
+<li>A platform201 plan that includes the Google Cloud integration. If your plan does not include it, <strong>Project → Settings → Google Cloud</strong> shows <strong>Upgrade plan</strong>.</li>
+<li>A Google account with access to your Google Cloud organisation.</li>
+<li>An open Google Cloud billing account.</li>
+<li>The permissions below, or an administrator who can grant them.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Role for your Google account</th>
+<th>Why it is needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organisation</td>
+<td><strong>Folder Admin</strong> (<code>roles/resourcemanager.folderAdmin</code>)</td>
+<td>Find or create the platform201 folder and manage its access</td>
+</tr>
+<tr>
+<td>Organisation</td>
+<td><strong>Organization Policy Viewer</strong> (<code>roles/orgpolicy.policyViewer</code>)</td>
+<td>Check for policies that would block the connection</td>
+</tr>
+<tr>
+<td>Organisation, when a policy exception is needed</td>
+<td><strong>Organization Policy Administrator</strong> (<code>roles/orgpolicy.policyAdmin</code>)</td>
+<td>Set the folder exceptions described below</td>
+</tr>
+<tr>
+<td>Selected billing account</td>
+<td><strong>Billing Account Administrator</strong> (<code>roles/billing.admin</code>)</td>
+<td>Allow platform201 to attach the environment's GCP project to that billing account</td>
+</tr>
+</tbody>
+</table>
+<p>platform201 checks the underlying permissions, so equivalent permissions from another role can also work. If your Google account can change organisation IAM policies, missing organisation roles can be granted to your account during linking. The screen tells you which grants will be automatic. These grants to your Google account are separate from the access granted to platform201.</p>
+<h2 id="1-open-the-projects-google-cloud-settings">1. Open the project's Google Cloud settings</h2>
+<p>Open your project, select <strong>Settings</strong>, and find the <strong>Google Cloud</strong> section. Click <strong>Connect Google Cloud</strong>.</p>
+<p>Sign in with the Google account that has access to your organisation and approve the Google consent screen. If you chose the wrong account, use <strong>Use a different Google account</strong>.</p>
+<h2 id="2-select-and-link-your-organisation">2. Select and link your organisation</h2>
+<p>Choose your organisation from the <strong>Organisation</strong> list. platform201 checks your permissions before enabling <strong>Link organisation</strong>.</p>
+<p>If roles are missing, the screen shows the role names and commands for an administrator to run. Copy those commands and ask your administrator to apply them, then click <strong>Check again</strong>. Allow time for Google's permission changes to take effect.</p>
+<p>Click <strong>Link organisation</strong>. Once complete, the settings show <strong>Linked</strong>, your organisation, the folder ID, and the Google account used to link it.</p>
+<h2 id="3-create-an-environment-in-your-organisation">3. Create an environment in your organisation</h2>
+<p>Create a new environment in the linked project and tick <strong>Deploy into your linked Google Cloud organisation</strong>. This option starts unticked, so select it explicitly for environments you want to host in your organisation.</p>
+<p>Choose a <strong>Billing account</strong>. If your Google account has only one open billing account, it is selected automatically. Sign in again if prompted, and resolve any billing permission requirements shown on screen.</p>
+<p>platform201 grants its deployer service account <strong>Billing Account User</strong> (<code>roles/billing.user</code>) on the selected account. Click <strong>Create</strong>, then open the environment and deploy using the normal <a href="../deploy-app/">application deployment workflow</a>.</p>
+<p>Linking an organisation does not migrate existing environments. The hosting option above applies when creating a new environment; the clone flow does not expose this choice.</p>
+<h2 id="what-platform201-creates-and-changes">What platform201 creates and changes</h2>
+<h3 id="when-you-link-the-organisation">When you link the organisation</h3>
+<p>platform201 creates a folder named <strong><code>platform201</code></strong> directly under your organisation, or reuses an active folder with that name. The folder is the parent for new linked environment projects.</p>
+<p>It grants these roles to platform201-owned service accounts on that folder:</p>
+<table>
+<thead>
+<tr>
+<th>Service account purpose</th>
+<th>Roles on the platform201 folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployer</td>
+<td><strong>Editor</strong> (<code>roles/editor</code>) and <strong>Project Creator</strong> (<code>roles/resourcemanager.projectCreator</code>)</td>
+</tr>
+<tr>
+<td>Cleanup service</td>
+<td><strong>Project Deleter</strong> (<code>roles/resourcemanager.projectDeleter</code>) and <strong>Browser</strong> (<code>roles/browser</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>These folder grants are inherited by its child projects. The cleanup service can delete projects inside the folder. Keep the folder dedicated to platform201 environments.</p>
+<p>If organisation policies would block the connection, platform201 also sets these exceptions <strong>on the platform201 folder</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Folder exception</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain restricted sharing (<code>iam.allowedPolicyMemberDomains</code>)</td>
+<td>Adds the platform201 directory customer ID to allowed values while inheriting the parent's policy</td>
+</tr>
+<tr>
+<td>Disable service account key creation (<code>iam.disableServiceAccountKeyCreation</code>)</td>
+<td>Sets enforcement to false for the folder</td>
+</tr>
+</tbody>
+</table>
+<p>The organisation's policies themselves are not changed. These exceptions are only written when the corresponding policy is detected as blocking the connection.</p>
+<h3 id="when-a-linked-environment-is-provisioned">When a linked environment is provisioned</h3>
+<p>The environment receives a new GCP project with an ID in the form <code>p201-&lt;generated-id&gt;</code>, under the platform201 folder and attached to its selected billing account. The following resources and permissions are provisioned in that project:</p>
+<table>
+<thead>
+<tr>
+<th>Resource or change</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>platform201-deployer@&lt;project-id&gt;.iam.gserviceaccount.com</code></td>
+<td>Service account used to manage the environment's infrastructure</td>
+</tr>
+<tr>
+<td><code>platform201-runtime@&lt;project-id&gt;.iam.gserviceaccount.com</code></td>
+<td>Service account used by deployed workloads</td>
+</tr>
+<tr>
+<td>Artifact Registry Docker repository</td>
+<td>Stores workload container images, with cleanup policies for old images and build caches</td>
+</tr>
+<tr>
+<td><code>tenant-state-&lt;generated-id&gt;</code> Cloud Storage bucket in <code>europe-west2</code></td>
+<td>Stores infrastructure state, with uniform bucket access, public access prevention, and protection against destruction by the provisioning configuration</td>
+</tr>
+<tr>
+<td><code>cloudrun-to-pubsub</code> log sink</td>
+<td>Forwards Cloud Run revision logs to a platform201 Pub/Sub topic so they are available in platform201</td>
+</tr>
+<tr>
+<td>Google service identities</td>
+<td>Supports enabled services, including Cloud Build and Cloud Logging</td>
+</tr>
+<tr>
+<td>Project, service account, and bucket IAM grants</td>
+<td>Lets platform201 deploy infrastructure, use service accounts, access state and secrets, and provide operational information</td>
+</tr>
+</tbody>
+</table>
+<p>Provisioning enables the Service Usage, Cloud Resource Manager, Compute Engine, IAM Service Account Credentials, Secret Manager, Cloud Logging, Cloud Scheduler, Pub/Sub, Cloud Run, Cloud Functions, Artifact Registry, Cloud Billing, Cloud Build, and Cloud SQL Admin APIs. Linked projects are not attached to the platform201 shared VPC by this provisioning step.</p>
+<p>The initial IAM grants are:</p>
+<table>
+<thead>
+<tr>
+<th>Principal</th>
+<th>Project roles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Environment's <code>platform201-deployer</code></td>
+<td><code>roles/editor</code>, <code>roles/cloudbuild.builds.editor</code>, <code>roles/run.admin</code>, <code>roles/cloudfunctions.admin</code>, <code>roles/secretmanager.admin</code>, <code>roles/pubsub.admin</code>, <code>roles/iam.serviceAccountAdmin</code>, <code>roles/cloudsql.admin</code>, <code>roles/storage.admin</code>, <code>roles/artifactregistry.editor</code></td>
+</tr>
+<tr>
+<td>Environment's <code>platform201-runtime</code></td>
+<td><code>roles/run.invoker</code>, <code>roles/cloudfunctions.invoker</code>, <code>roles/cloudsql.client</code></td>
+</tr>
+<tr>
+<td>platform201's central deployer</td>
+<td><code>roles/editor</code>, <code>roles/iam.serviceAccountTokenCreator</code>, <code>roles/artifactregistry.writer</code>, <code>roles/run.admin</code>, <code>roles/cloudfunctions.admin</code></td>
+</tr>
+<tr>
+<td>platform201's core service identity</td>
+<td><code>roles/storage.objectAdmin</code>, <code>roles/iam.serviceAccountTokenCreator</code>, <code>roles/secretmanager.secretAccessor</code>, <code>roles/cloudsql.viewer</code></td>
+</tr>
+</tbody>
+</table>
+<p>The central deployer also receives <strong>Service Account Token Creator</strong> on the environment's deployer and runtime accounts, and <strong>Storage Object Admin</strong> on the state bucket. The environment deployer receives <strong>Storage Admin</strong> on that bucket and <strong>Service Account User</strong> on the runtime account. The Cloud Build service agent receives <strong>Service Account User</strong> on the deployer account.</p>
+<p>Deploying your canvas creates the resources you select, such as Cloud Run services, functions, databases, VMs, buckets, queues, or schedules. Those resources can introduce additional service accounts and resource-specific IAM grants. The tables above describe the initial project setup; inspect the deployed project's IAM and resources for its complete current configuration.</p>
+<h2 id="disconnect-in-platform201">Disconnect in platform201</h2>
+<p>Open <strong>Project → Settings → Google Cloud → Unlink</strong> and confirm. Sign in to Google again if prompted. Wait for any deployment in progress to finish first.</p>
+<p>Unlinking removes the folder roles granted to the platform201 deployer and cleanup service when no other platform201 project still links to the same organisation. It also removes the deployer's Billing Account User role from billing accounts that are no longer used by other links.</p>
+<p>Existing GCP projects are kept. Linked environments switch to platform201-managed hosting on their next deployment. Unlinking does not delete existing workloads, remove their billing attachment, remove project-level IAM grants, restore folder policy exceptions, or remove roles granted to your own Google account during setup.</p>
+<div class="admonition warning">
+<p class="admonition-title">Existing resources can still incur charges</p>
+<p>Unlinking is not a resource cleanup or data migration. Review the old GCP projects, workloads, and data before your next deployment, and remove resources you no longer need separately.</p>
+</div>
+<h2 id="revoke-the-connection-directly-in-google-cloud">Revoke the connection directly in Google Cloud</h2>
+<p>Your Google Cloud administrator can remove access without using platform201. For a planned disconnection, unlink in platform201 first, then review the remaining access below. If you revoke access in GCP first, deployments and the platform201 unlink operation can fail until an administrator resolves the permissions.</p>
+<h3 id="1-remove-folder-access">1. Remove folder access</h3>
+<p>In the Google Cloud console, open <strong>IAM &amp; Admin → IAM</strong> and select the <strong>platform201 folder</strong> using the resource selector. Match its folder ID to the one shown in your platform201 project settings.</p>
+<p>Find the platform201 deployer and cleanup service principals and remove their roles listed in the folder table above. Use the full principal email addresses shown in IAM to identify the accounts. These accounts belong to platform201; remove their access to your resources rather than trying to delete the accounts themselves.</p>
+<p>If a role is inherited, remove it at the parent where it was granted. Older connections may have organisation-level grants, so also check the organisation IAM policy. Google's <a href="https://docs.cloud.google.com/iam/docs/granting-changing-revoking-access" target="_blank">guide to revoking IAM access</a> explains the console steps.</p>
+<p>Removing shared folder access affects every environment and platform201 project using that folder.</p>
+<h3 id="2-remove-billing-access">2. Remove billing access</h3>
+<p>For each billing account used by linked environments, open <strong>Billing → Account management</strong>, find the platform201 deployer principal in the account permissions, and remove <strong>Billing Account User</strong> (<code>roles/billing.user</code>).</p>
+<p>This revokes permission to associate projects with the account. Existing project billing attachments and charges remain until you change or remove the resources separately.</p>
+<h3 id="3-remove-access-inside-each-environment-project">3. Remove access inside each environment project</h3>
+<p>Folder access is only part of the connection. In each <code>p201-...</code> project created for your linked environments:</p>
+<ol>
+<li>Open <strong>IAM &amp; Admin → IAM</strong>. Remove the direct project roles granted to platform201's central deployer and core service identities, using the project IAM table above as a checklist.</li>
+<li>Open <strong>IAM &amp; Admin → Service Accounts</strong>. For <code>platform201-deployer</code> and <code>platform201-runtime</code>, review their permissions and remove platform201 principals' <strong>Service Account Token Creator</strong> and any other access grants. Check any additional service accounts created for your deployed resources too.</li>
+<li>Open the <code>tenant-state-...</code> bucket's <strong>Permissions</strong> tab and remove the central deployer's direct <strong>Storage Object Admin</strong> grant. Review other resource-level policies for direct grants to platform201 principals.</li>
+<li>If you want to stop deployment access through the local deployer account as well, open <code>platform201-deployer</code> and choose <strong>Disable service account</strong>. Review its <strong>Keys</strong> tab and remove keys you no longer need. Disabling an account is reversible; see Google's <a href="https://docs.cloud.google.com/iam/docs/service-accounts-disable-enable" target="_blank">service account instructions</a>.</li>
+<li>Review the <code>cloudrun-to-pubsub</code> sink in <strong>Logging → Log Router</strong>. Disable or delete it if you want to stop forwarding Cloud Run logs to platform201.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Runtime accounts are used by your workloads</p>
+<p>Disabling <code>platform201-runtime</code>, or other service accounts used by running resources, can interrupt your applications. To keep workloads running independently, remove platform201's access to those accounts and retain the permissions your workloads need. Deleting a key alone does not revoke short-lived credentials already issued from it; see Google's <a href="https://docs.cloud.google.com/iam/docs/keys-create-delete" target="_blank">key removal guidance</a>.</p>
+</div>
+<h3 id="4-review-setup-permissions-and-policy-exceptions">4. Review setup permissions and policy exceptions</h3>
+<p>On the platform201 folder, open <strong>IAM &amp; Admin → Organization Policies</strong>. Review any overrides for <code>iam.allowedPolicyMemberDomains</code> and <code>iam.disableServiceAccountKeyCreation</code>. If you no longer need an exception, open <strong>Manage policy</strong> and select <strong>Inherit parent's policy</strong>. Review the impact on workloads remaining in the folder before applying the change. See Google's <a href="https://docs.cloud.google.com/organization-policy/apply-policies" target="_blank">policy inheritance instructions</a>.</p>
+<p>Also review the organisation roles granted to your own Google account during setup. An administrator can remove those grants if they are no longer needed for your other work.</p>
+<p>Keep the folder, projects, and data you still need. Removing access does not require deleting them.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p><strong>No organisations appear.</strong>
+Check that you signed in with the correct Google account and that it has access to a Google Cloud organisation. Use <strong>Use a different Google account</strong> to switch accounts.</p>
+<p><strong>Link organisation is disabled.</strong>
+Select an organisation and resolve the permissions marked as missing. Use <strong>Check again</strong> after an administrator applies the displayed commands.</p>
+<p><strong>No billing accounts appear.</strong>
+The environment dialog only lists open accounts accessible to the signed-in Google account. Check your account access and billing account status, then reconnect if needed.</p>
+<p><strong>The linked hosting option is missing.</strong>
+Check that your plan includes the integration, that the project is linked, and that you are creating a new environment rather than cloning one.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
