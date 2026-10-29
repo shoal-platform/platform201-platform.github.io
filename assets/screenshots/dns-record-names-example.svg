@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390" role="img" aria-labelledby="title desc">
+  <title id="title">Example DNS editor with automatic domain suffix</title>
+  <desc id="desc">For the mycompany.com zone, type app and _acme-challenge.app in the Name fields. The provider adds .mycompany.com. Copy each target from platform201 in full.</desc>
+  <rect width="1000" height="390" rx="14" fill="#f1f5f9"/>
+  <g font-family="Arial, sans-serif" fill="#0f172a">
+    <text x="32" y="43" font-size="22" font-weight="700">DNS records: mycompany.com</text>
+    <text x="32" y="73" font-size="15" fill="#475569">Illustrative editor — your provider's layout may differ</text>
+    <rect x="24" y="96" width="952" height="218" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <g font-size="14" font-weight="700" fill="#475569">
+      <text x="42" y="125">TYPE</text><text x="150" y="125">NAME / HOST — TYPE THIS</text>
+      <text x="450" y="125">AUTOMATIC SUFFIX</text><text x="650" y="125">VALUE / TARGET</text>
+    </g>
+    <path d="M24 140H976 M24 226H976" stroke="#e2e8f0"/>
+    <g font-size="16">
+      <text x="42" y="177">CNAME</text><text x="42" y="263">CNAME</text>
+      <rect x="140" y="151" width="292" height="42" rx="5" fill="#eff6ff" stroke="#2563eb"/>
+      <rect x="140" y="237" width="292" height="42" rx="5" fill="#eff6ff" stroke="#2563eb"/>
+      <g font-family="monospace" fill="#1d4ed8"><text x="152" y="178">app</text><text x="152" y="264">_acme-challenge.app</text></g>
+      <g fill="#64748b"><text x="450" y="178">.mycompany.com</text><text x="450" y="264">.mycompany.com</text></g>
+      <text x="650" y="176">Gateway target from platform201</text>
+      <text x="650" y="262">SSL verification target from platform201</text>
+      <g font-size="13" fill="#475569"><text x="150" y="214">Creates app.mycompany.com</text><text x="150" y="300">Creates _acme-challenge.app.mycompany.com</text></g>
+    </g>
+    <text x="32" y="349" font-size="16" font-weight="700">Name: enter only the prefix. Value: copy the full target.</text>
+    <text x="32" y="375" font-size="14" fill="#475569">For the apex mycompany.com, use @ or a blank Name field, following your provider's instructions.</text>
+  </g>
+</svg>

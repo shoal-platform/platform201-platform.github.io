@@ -1344,7 +1344,7 @@
 
 
 <h1 id="how-do-i-set-up-a-custom-domain">How do I set up a custom domain?</h1>
-<p>Every gateway gets a default platform201 address like <code>gigantic-peach-ptarmigan.eu1.platform201.live</code>. You can put a hostname you own in front of it, such as <code>app.mycompany.com</code>, so users reach your deployment on your own domain.</p>
+<p>Every gateway gets a default platform201 address like <code>gigantic-peach-ptarmigan.eu1.platform201.live</code>. You can put a hostname you own in front of it, such as <code>app.mycompany.com</code> or the apex (root) domain <code>mycompany.com</code>, so users reach your deployment on your own domain.</p>
 <p>platform201 handles SSL for custom domains. You don't need to set up a certificate.</p>
 <h2 id="before-you-start">Before you start</h2>
 <ul>
@@ -1393,7 +1393,53 @@
 <p>The values above are examples. Always copy the records shown for your own domain, because the <code>_acme-challenge</code> value is unique to each one.</p>
 <div class="admonition tip">
 <p class="admonition-title">Record names at your DNS provider</p>
-<p>Many DNS providers add your root domain to the record name for you. If yours does, enter only the part before the root domain: <code>test</code> and <code>_acme-challenge.test</code> for the example above. If you enter the full name, some providers end up creating <code>test.platform201.com.platform201.com</code>.</p>
+<p>First, check which domain's DNS settings you are editing. For example, if you are editing <strong><code>mycompany.com</code></strong>, your provider may automatically add <code>.mycompany.com</code> after anything you type in the <strong>Name</strong> (sometimes called <strong>Host</strong>) field.</p>
+<p>In that case, enter only the part <strong>before</strong> <code>.mycompany.com</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Hostname you want to create</th>
+<th>Enter in Name / Host</th>
+<th>Full DNS name after your provider adds the domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app.mycompany.com</code></td>
+<td><code>app</code></td>
+<td><code>app.mycompany.com</code></td>
+</tr>
+<tr>
+<td><code>_acme-challenge.app.mycompany.com</code></td>
+<td><code>_acme-challenge.app</code></td>
+<td><code>_acme-challenge.app.mycompany.com</code></td>
+</tr>
+<tr>
+<td><code>test.platform201.com</code> (when editing <code>platform201.com</code>)</td>
+<td><code>test</code></td>
+<td><code>test.platform201.com</code></td>
+</tr>
+<tr>
+<td><code>_acme-challenge.test.platform201.com</code> (when editing <code>platform201.com</code>)</td>
+<td><code>_acme-challenge.test</code></td>
+<td><code>_acme-challenge.test.platform201.com</code></td>
+</tr>
+<tr>
+<td><code>mycompany.com</code> (apex / root)</td>
+<td><code>@</code> or leave blank, as your provider instructs</td>
+<td><code>mycompany.com</code></td>
+</tr>
+<tr>
+<td><code>_acme-challenge.mycompany.com</code></td>
+<td><code>_acme-challenge</code></td>
+<td><code>_acme-challenge.mycompany.com</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example DNS editor:</strong> the grey suffix is supplied by the provider; only the text inside the Name field is typed. This mockup shows the subdomain <code>app.mycompany.com</code>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/screenshots/dns-record-names-example.svg" data-desc-position="bottom"><img alt="Mock DNS editor for mycompany.com: enter app and _acme-challenge.app in the Name fields; the provider adds .mycompany.com to each." src="../assets/screenshots/dns-record-names-example.svg"></a></p>
+<p><strong>Avoid repeating the domain.</strong> If the provider adds <code>.mycompany.com</code> and you type <code>app.mycompany.com</code>, it may create <code>app.mycompany.com.mycompany.com</code> instead of <code>app.mycompany.com</code>.</p>
+<p>Some providers expect the <strong>full hostname</strong> instead. Check their field hint or preview of the final DNS name before saving. This shortening applies only to the <strong>Name / Host</strong> field: copy the <strong>Value / Target</strong> from platform201 in full.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Using Cloudflare?</p>
@@ -1406,14 +1452,36 @@
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p><strong>The domain stays on Pending DNS.</strong>
 Check that both records exist and match the values shown in platform201 exactly. You can look up what DNS currently returns with:</p>
-<div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>-type<span class="o">=</span>CNAME<span class="w"> </span>test.platform201.com
-nslookup<span class="w"> </span>-type<span class="o">=</span>CNAME<span class="w"> </span>_acme-challenge.test.platform201.com
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Linux</label><label for="__tabbed_1_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Open <strong>Terminal</strong> and run:</p>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>+short<span class="w"> </span>CNAME<span class="w"> </span>test.platform201.com
+dig<span class="w"> </span>+short<span class="w"> </span>CNAME<span class="w"> </span>_acme-challenge.test.platform201.com
 </code></pre></div>
-<p>If nothing comes back, the records haven't propagated yet or were created under the wrong name (see the tip in step 3).</p>
+</div>
+<div class="tabbed-block">
+<p>Open a terminal and run:</p>
+<div class="highlight"><pre><span></span><code>dig<span class="w"> </span>+short<span class="w"> </span>CNAME<span class="w"> </span>test.platform201.com
+dig<span class="w"> </span>+short<span class="w"> </span>CNAME<span class="w"> </span>_acme-challenge.test.platform201.com
+</code></pre></div>
+<p>If <code>dig</code> isn't installed, install <code>dnsutils</code> on Debian/Ubuntu or <code>bind-utils</code> on Fedora/RHEL using your package manager.</p>
+</div>
+<div class="tabbed-block">
+<p>Open <strong>PowerShell</strong> or <strong>Command Prompt</strong> and run:</p>
+<div class="highlight"><pre><span></span><code><span class="n">nslookup</span> <span class="n">-type</span><span class="p">=</span><span class="n">CNAME</span> <span class="n">test</span><span class="p">.</span><span class="n">platform201</span><span class="p">.</span><span class="n">com</span>
+<span class="n">nslookup</span> <span class="n">-type</span><span class="p">=</span><span class="n">CNAME</span> <span class="n">_acme-challenge</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">platform201</span><span class="p">.</span><span class="n">com</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Replace the example hostnames with your own. The first result should match your gateway's target and the second should match the certificate verification target shown in platform201.</p>
+<p>For an apex domain or a flattened DNS record, the traffic record may return IP addresses instead of a <code>CNAME</code>. On macOS or Linux, check with <code>dig +short A mycompany.com</code> and <code>dig +short AAAA mycompany.com</code>; on Windows, use <code>nslookup -type=A mycompany.com</code> and <code>nslookup -type=AAAA mycompany.com</code>. Check the certificate record separately using <code>_acme-challenge.mycompany.com</code>.</p>
+<p>If the expected record returns no answer, it may not have propagated yet or may have been created under the wrong name (see the tip in step 3). On macOS or Linux, rerun <code>dig</code> without <code>+short</code> to see the DNS status: <code>NXDOMAIN</code> means the queried name doesn't exist, while <code>SERVFAIL</code> indicates a DNS resolution problem. To compare with a public resolver, add <code>@1.1.1.1</code> to a <code>dig</code> command or <code>1.1.1.1</code> to the end of an <code>nslookup</code> command. Different answers can indicate cached DNS results.</p>
 <p><strong>I already have an A record or another record for this hostname.</strong>
 A hostname can't have a <code>CNAME</code> alongside other records. Remove the existing record for that hostname before adding the <code>CNAME</code>.</p>
 <p><strong>Can I use a root domain like <code>mycompany.com</code>?</strong>
-Most DNS providers don't allow a <code>CNAME</code> on the root domain. Use a subdomain such as <code>app.mycompany.com</code> or <code>www.mycompany.com</code>, or use your provider's <code>CNAME</code> flattening / <code>ALIAS</code> record if it offers one.</p>
+Yes. platform201 supports apex (root) domains, so you can use <code>mycompany.com</code> directly. Enter it in the custom domain dialog and publish the DNS records shown for it. At DNS providers that use relative record names, the root domain is usually entered as <code>@</code> (or left blank), and the certificate verification record as <code>_acme-challenge</code>.</p>
 
 
 
